@@ -34,6 +34,21 @@ npm i --save @nestjs/typeorm typeorm mysql2
 npm i cookie-parser
 npm i -D @types/cookie-parser
 
+npm install --save @nestjs/typeorm typeorm mysql2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
