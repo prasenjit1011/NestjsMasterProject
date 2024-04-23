@@ -1,18 +1,38 @@
 ### Important Command List
 
-## $ npm i -g nestjs/cli
+npm i -g nestjs/cli
 
-## $ nest new projectname
+nest new projectname
 
-## $ npm run start:dev
+npm run start:dev
 
-## $ nest g module users
+nest g module users
 
-## $ nest g controller users
+nest g controller users
 
-## $ nest g service users
+nest g service users
 
+npm i @nestjs/mapped-types -D
 
+npm i class-validator class-transformer
+
+npm i prisma -D
+
+npx prisma init
+npx prisma migrate dev -name init
+## push
+npx prisma migrate dev --name name_change
+nest g module database
+nest g service database
+nest g resource employees
+
+npm i @nestjs/throttler
+
+postgresql://neondb_owner:ysY6GO7HKcBl@ep-withered-frost-a5etb539.us-east-2.aws.neon.tech/neondb?sslmode=require
+
+npm i --save @nestjs/typeorm typeorm mysql2
+npm i cookie-parser
+npm i -D @types/cookie-parser
 
 
 
