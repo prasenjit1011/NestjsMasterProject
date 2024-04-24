@@ -19,12 +19,21 @@ npm i class-validator class-transformer
 npm i prisma -D
 
 npx prisma init
-npx prisma migrate dev -name init
-## push
+npx prisma migrate dev 
+## -name init
+## push, deploy
+
+nest g module database
+
+
 npx prisma migrate dev --name name_change
 nest g module database
 nest g service database
 nest g resource employees
+
+
+enableCros
+setglobalprefix('api')
 
 npm i @nestjs/throttler
 

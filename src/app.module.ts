@@ -5,11 +5,11 @@ import { JwtModule } from '@nestjs/jwt';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
-
 import { User } from './users/user.entity';
+import { DatabaseModule } from './database/database.module';
+import { EmployeesModule } from './employees/employees.module';
 
 
-//TypeOrmModule
 @Module({
   
   controllers: [AppController],
@@ -30,7 +30,9 @@ import { User } from './users/user.entity';
         secret: 'secret',
         signOptions: {expiresIn: '1d'}
     }),
-    UsersModule
+    UsersModule,
+    DatabaseModule,
+    EmployeesModule
   ],
 })
 export class AppModule {}

@@ -22,6 +22,18 @@ export class UsersController {
         }
     }
 
+    @Get('/:id')
+    async userdetails(){
+        const user = await this.userService.findOne({id: id});
+        if(user){
+            return user;
+        }
+        else{
+
+            return JSON.stringify({'status':200, "msg":"User not found"});
+        }
+    }
+
 
 
 /*
