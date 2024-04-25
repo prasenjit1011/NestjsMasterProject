@@ -15,7 +15,7 @@ nest g service users
 npm i @nestjs/mapped-types -D
 
 npm i class-validator class-transformer
-
+npm i --save @nestjs/mongoose mongoose
 npm i prisma -D
 
 npx prisma init
@@ -45,6 +45,23 @@ npm i -D @types/cookie-parser
 
 npm install --save @nestjs/typeorm typeorm mysql2
 
+
+schemas
+import * as mongoose from "mongoose"
+export const CarSchema = new mongoose.Schema({
+  id:Number
+  color:String
+})
+
+
+
+interfaces
+car.interface.ts
+
+import { Document } from 'mongoose'
+export interface ICar extends Document{
+  readonly id:Number
+}
 
 
 
