@@ -27,10 +27,10 @@ import { CarsModule } from './cars/cars.module';
     //   synchronize: true,
     // }),
     // TypeOrmModule.forFeature([User]),
-    // JwtModule.register({
-    //     secret: 'secret',
-    //     signOptions: {expiresIn: '1d'}
-    // }),
+    JwtModule.register({
+        secret: 'secret',
+        signOptions: {expiresIn: '1d'}
+    }),
     // UsersModule,
     MongooseModule.forRoot('mongodb+srv://tester:tester1234@cluster0.hlicuim.mongodb.net/Mydb?retryWrites=true&w=majority'),
     DatabaseModule,

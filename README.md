@@ -1,5 +1,15 @@
 ### Important Command List
 
+
+#### Employee CRUD with PostgreSQL with Prisma
+
+#### Car CRUD with Mongoose 
+
+#### User CRUD with MySQL work in progress
+
+
+
+
 npm i -g nestjs/cli
 
 nest new projectname
@@ -30,6 +40,12 @@ npx prisma migrate dev --name name_change
 nest g module database
 nest g service database
 nest g resource employees
+
+
+npm install -g dotenv-cli
+
+dotenv -e .env.local -- npx prisma studio
+
 
 
 enableCros

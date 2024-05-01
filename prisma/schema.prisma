@@ -4,9 +4,16 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+//import { IsInt, IsDefined, IsString, IsOptional } from "class-validator";
+
+
 generator client {
   provider = "prisma-client-js"
 }
+
+// generator class_validator {
+//   provider = "node ./lib/generator.js"
+// }
 
 datasource db {
   provider = "postgresql"
@@ -14,12 +21,13 @@ datasource db {
 }
 
 model Employee {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   name      String
-  email     String   @unique
+  email     String    @unique
   role      Role
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  password  String    @default("abcd")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 
 enum Role {
