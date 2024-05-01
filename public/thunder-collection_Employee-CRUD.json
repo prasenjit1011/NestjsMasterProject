@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Employee-CRUD",
     "collectionId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
-    "dateExported": "2024-05-01T04:08:06.130Z",
+    "dateExported": "2024-05-01T06:31:42.280Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -75,7 +75,58 @@
                 "raw": "{\n  \"name\":\"newdeveloper\",\n  \"email\":\"newdeveloper@admin.com\",\n  \"role\":\"ENGINEER\"\n}",
                 "form": []
             }
+        },
+        {
+            "_id": "1ccf3740-e08e-419d-8da8-590a29579e4b",
+            "colId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+            "containerId": "",
+            "name": "Employee-Registration",
+            "url": "http://localhost:3000/employees/register",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-05-01T05:35:37.187Z",
+            "modified": "2024-05-01T05:35:37.187Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"user\",\n  \"email\":\"user@admin.com\",\n  \"password\":\"Hello\",\n  \"role\":\"ENGINEER\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "72246448-3e42-4ca7-8fad-053dc09674df",
+            "colId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+            "containerId": "",
+            "name": "Employee-Login",
+            "url": "http://localhost:3000/employees/login",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-05-01T06:29:33.292Z",
+            "modified": "2024-05-01T06:29:33.292Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"user@admin.com\",\n  \"password\":\"Hello\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "723a9cd6-e66a-410d-8e36-2e1ef7036ee0",
+            "colId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+            "containerId": "",
+            "name": "Employee-Logout",
+            "url": "http://localhost:3000/employees/logout",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-05-01T06:31:35.426Z",
+            "modified": "2024-05-01T06:31:35.426Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"user@admin.com\",\n  \"password\":\"Hello\"\n}",
+                "form": []
+            }
         }
     ],
-    "ref": "fjP2xXY867lNhqb7EjXZpM9KTC-qmBciqITehulLYEPpI3kimYchddrg4TWx9gWuCuX0fmaHl8tCDqS0-fMmHg"
+    "ref": "fjP2xXY867lNhqb7EjXZpJn9h1mM6pXC-WS6mNTP_ioo7MEGyY0U5JHQXVcJCDJvNV7w3xejsbBHle4Ys4lYDQ"
 }

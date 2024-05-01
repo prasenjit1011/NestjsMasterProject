@@ -28,7 +28,6 @@ export class EmployeesController {
   @SkipThrottle({ default: false })
   @Get()
   findAll(@Ip() ip: string, @Query('role') role?: Role) {
-    //this.logger.log(`Request for ALL Employees\t${ip}`, EmployeesController.name)
     return this.employeesService.findAll(role);
   }
 
@@ -53,39 +52,30 @@ export class EmployeesController {
   async register(@Body(ValidationPipe) createEmployeeDto: Prisma.EmployeeCreateInput) 
   {
     createEmployeeDto.password = await bcrypt.hash(createEmployeeDto.password, 12);
-    
-    //log('----here-----------', name, email, role, password);
-    //log(createEmployeeDto.password, ' -- ');
-    //log(createEmployeeDto)
-    //return JSON.stringify({'status':200, "msg":"Employee registration"});
-
     const user = await this.employeesService.createEmployee(createEmployeeDto);
     delete user.password;
     return user;
   }
 
   @Post('login')
-  async login(
-      @Body('email') email: string,
-      @Body('password') password: string,
-      @Res({passthrough: true}) response: Response
-  ) {
-      const user = await this.employeesService.findOneEmployee({email});
+  async login(@Body('email') email: string, @Body('password') password: string, @Res({passthrough: true}) response: Response) {
+    let user = await this.employeesService.find({email});
 
       if (!user) {
-          throw new BadRequestException('invalid credentials');
+          throw new BadRequestException('User not found.');
       }
 
       if (!await bcrypt.compare(password, user.password)) {
-          throw new BadRequestException('invalid credentials');
+          throw new BadRequestException('invalid credentials.');
       }
 
       const jwt = await this.jwtService.signAsync({id: user.id});
-
       response.cookie('jwt', jwt, {httpOnly: true});
 
       return {
-          message: 'success'
+          message: 'Login success',
+          jwt,
+          user
       };
   }
 

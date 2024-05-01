@@ -18,6 +18,15 @@ export class EmployeesService {
     })
   }
 
+
+  async find(where) {
+    
+      return this.databaseService.employee.findFirst({
+        where: where
+      });
+    
+  }
+  
   async findAll(role?: Role) {
     if (role) {
       return this.databaseService.employee.findMany({
