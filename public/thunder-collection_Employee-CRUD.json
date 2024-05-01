@@ -1,0 +1,81 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Employee-CRUD",
+    "collectionId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+    "dateExported": "2024-05-01T04:08:06.130Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "aaa5a4f9-715f-427c-a266-d7dc0e443d5b",
+            "colId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+            "containerId": "",
+            "name": "Employee-List",
+            "url": "http://localhost:3000/employees/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-30T08:12:16.120Z",
+            "modified": "2024-04-30T08:12:16.120Z",
+            "headers": []
+        },
+        {
+            "_id": "7a2e7ec2-f252-4a48-81c6-267c9224f1e7",
+            "colId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+            "containerId": "",
+            "name": "Employee-Details",
+            "url": "http://localhost:3000/employees/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-30T08:12:47.986Z",
+            "modified": "2024-04-30T08:12:47.986Z",
+            "headers": []
+        },
+        {
+            "_id": "ade609c0-e764-499c-8728-2f3b878f73fd",
+            "colId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+            "containerId": "",
+            "name": "Employee-Patch",
+            "url": "http://localhost:3000/employees/1",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2024-04-30T08:14:11.515Z",
+            "modified": "2024-04-30T08:14:11.515Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Prasenjit\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "204fec6d-8de4-402e-a37b-e8f9ad75ef12",
+            "colId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+            "containerId": "",
+            "name": "Employee-Delete",
+            "url": "http://localhost:3000/employees/15",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-04-30T08:14:30.564Z",
+            "modified": "2024-04-30T08:14:30.564Z",
+            "headers": []
+        },
+        {
+            "_id": "1da2a3ca-11be-415a-8253-8d4aaffc15b3",
+            "colId": "b4462907-0aa5-49cd-9da5-bff947a7b476",
+            "containerId": "",
+            "name": "Employee-Create",
+            "url": "http://localhost:3000/employees/",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-04-30T08:15:18.694Z",
+            "modified": "2024-04-30T08:15:18.694Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"newdeveloper\",\n  \"email\":\"newdeveloper@admin.com\",\n  \"role\":\"ENGINEER\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "fjP2xXY867lNhqb7EjXZpM9KTC-qmBciqITehulLYEPpI3kimYchddrg4TWx9gWuCuX0fmaHl8tCDqS0-fMmHg"
+}
