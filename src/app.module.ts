@@ -10,13 +10,14 @@ import { DatabaseModule } from './database/database.module';
 import { EmployeesModule } from './employees/employees.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CarsModule } from './cars/cars.module';
+import { StudentModule } from './student/student.module';
 
 @Module({
   
   controllers: [AppController],
   providers: [AppService],
   imports: [
-    // TypeOrmModule.forRoot({
+    // TypeOrmModule.forRoot( {
     //   type: 'mysql',
     //   host: 'localhost',
     //   port: 3306,
@@ -35,7 +36,8 @@ import { CarsModule } from './cars/cars.module';
     MongooseModule.forRoot('mongodb+srv://tester:tester1234@cluster0.hlicuim.mongodb.net/Mydb?retryWrites=true&w=majority'),
     DatabaseModule,
     EmployeesModule,
-    CarsModule
+    CarsModule,
+    StudentModule
   ],
 })
 export class AppModule {}

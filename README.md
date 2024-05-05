@@ -8,7 +8,10 @@
 #### User CRUD with MySQL work in progress
 
 
+DATABASE_URL="postgresql://neondb_owner:ysY6GO7HKcBl@ep-withered-frost-a5etb539-pooler.us-east-2.aws.neon.tech/nestcrud?sslmode=require"
 
+
+nest g res student
 
 npm i -g nestjs/cli
 
