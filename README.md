@@ -59,8 +59,7 @@ https://www.youtube.com/watch?v=ETnTvvFFLgk
 
 http://localhost:3000/graphql
 
-Mobile List :
-
+1) Mobile List :
 {
   mobiles{
     id
@@ -69,9 +68,17 @@ Mobile List :
   }
 }
 
+----- getMobileById -----
+{
+  getMobileById(mobileId:3){
+    id
+    title
+  }
+}
 
 
-Add Mobile :
+
+2) Add Mobile :
 mutation AddMobile($addMobileArgs:AddMobileArgs!){
   addMobile(addMobileArgs:$addMobileArgs)
 }
@@ -85,7 +92,7 @@ mutation AddMobile($addMobileArgs:AddMobileArgs!){
 
 
 
-Update Mobile :
+3) Update Mobile :
 mutation UpdateMobile($updateMobileArgs: UpdateMobileArgs!){
   updateMobile(updateMobileArgs:$updateMobileArgs)
 }
@@ -99,6 +106,18 @@ mutation UpdateMobile($updateMobileArgs: UpdateMobileArgs!){
 }
 
 
+
+4) Delete
+mutation DeleteMobile($mobileId: Int!){
+  deleteMobileById(mobileId:$mobileId)
+}
+
+{
+  "mobileId":3
+}
+
+
+-----------------------------
 
 
 

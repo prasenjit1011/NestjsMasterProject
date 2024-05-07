@@ -17,10 +17,11 @@ type Mobile {
 type Query {
   books: [Book!]!
   mobiles: [Mobile!]!
-  mobile(mobileId: Int!): Mobile!
+  getMobileById(mobileId: Int!): Mobile!
 }
 
 type Mutation {
+  deleteMobileById(mobileId: Int!): String!
   addMobile(addMobileArgs: AddMobileArgs!): String!
   updateMobile(updateMobileArgs: UpdateMobileArgs!): String!
 }

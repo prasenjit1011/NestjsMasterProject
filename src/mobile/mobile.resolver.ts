@@ -16,13 +16,13 @@ export class MobileResolver{
     }
 
 
-    @Query(returns => Mobile, {name:'mobile'})
+    @Query(returns => Mobile, {name:'getMobileById'})
     getMobileById(@Args({name:'mobileId', type:()=>Int}) id: number){
-        return this.mobileService.findAllMobiles();
+        return this.mobileService.findMobileById(id);
     }
 
 
-    @Mutation(returns => String, {name:'addMobile'})
+    @Mutation(returns => String, {name:'deleteMobileById'})
     deleteMobileById(@Args({name:'mobileId', type: () => Int}) id: number){
         return this.mobileService.deleteMobileById(id);
     }

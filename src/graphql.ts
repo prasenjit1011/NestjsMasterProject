@@ -34,10 +34,11 @@ export interface Mobile {
 export interface IQuery {
     books(): Book[] | Promise<Book[]>;
     mobiles(): Mobile[] | Promise<Mobile[]>;
-    mobile(mobileId: number): Mobile | Promise<Mobile>;
+    getMobileById(mobileId: number): Mobile | Promise<Mobile>;
 }
 
 export interface IMutation {
+    deleteMobileById(mobileId: number): string | Promise<string>;
     addMobile(addMobileArgs: AddMobileArgs): string | Promise<string>;
     updateMobile(updateMobileArgs: UpdateMobileArgs): string | Promise<string>;
 }
