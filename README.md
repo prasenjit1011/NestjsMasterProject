@@ -57,6 +57,68 @@ https://www.youtube.com/watch?v=ETnTvvFFLgk
 
 
 
+http://localhost:3000/graphql
+
+Mobile List :
+
+{
+  mobiles{
+    id
+    title
+    price
+  }
+}
+
+
+
+Add Mobile :
+mutation AddMobile($addMobileArgs:AddMobileArgs!){
+  addMobile(addMobileArgs:$addMobileArgs)
+}
+
+{
+  "addMobileArgs": {
+    "title": "Vivo",
+    "price": 4521
+  }
+}
+
+
+
+Update Mobile :
+mutation UpdateMobile($updateMobileArgs: UpdateMobileArgs!){
+  updateMobile(updateMobileArgs:$updateMobileArgs)
+}
+
+{
+  "updateMobileArgs": {
+    "id":1,
+    "title": "NewVivo",
+    "price": 44552
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>

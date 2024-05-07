@@ -6,6 +6,8 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { BookModule } from './book/book.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
+import { Mobile } from './mobile/schema/mobile.schema';
+import { MobileModule } from './mobile/mobile.module';
 
 @Module({
   imports: [
@@ -20,16 +22,23 @@ import { join } from 'path';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: '5432',
-      username: '',
-      password: '',
-      entities: [],
+      host: 'ep-withered-frost-a5etb539.us-east-2.aws.neon.tech',
+      ssl: true,
+      port: 5432,
+      database:'nestcrud',
+      username: 'neondb_owner',
+      password: 'ysY6GO7HKcBl',
+      entities: [__dirname+'/**/*.entity{.ts,.js}'],
       synchronize: true
     }),
-    BookModule
+    BookModule,
+    MobileModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
+
+//ENDPOINT_ID='ep-withered-frost-a5etb539-pooler'
+// DATABASE_URL="postgresql://neondb_owner:ysY6GO7HKcBl@ep-withered-frost-a5etb539-pooler.us-east-2.aws.neon.tech/nestcrud?sslmode=require"
+
 export class AppModule {}
