@@ -35,6 +35,25 @@ npm i cookie-parser
 npm i -D @types/cookie-parser
 
 
+npm i --save @nestjs/typeorm typeorm pg
+
+npm i @nestjs/graphql @nestjs/apollo graphql apollo-server-express
+
+ts-morph
+rxjs
+reflect-metadata
+platform
+
+
+Repo :
+https://www.youtube.com/watch?v=YXQr2LhYm0c
+
+https://www.youtube.com/watch?v=rDOZB1Wolb8
+https://www.youtube.com/watch?v=dk9bk_U1u7E
+
+Graphql NestJs: NestJs Graphql Database (NestJs Graphql Postgres)
+https://www.youtube.com/watch?v=ETnTvvFFLgk
+
 
 
 
