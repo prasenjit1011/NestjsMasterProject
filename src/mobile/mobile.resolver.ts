@@ -4,6 +4,8 @@ import { Mobile } from "./schema/mobile.schema";
 import { MobileService } from "./mobile.service";
 import { AddMobileArgs } from "./args/addmobile.args";
 import { UpdateMobileArgs } from "./args/updatemobile.args";
+import { UseGuards } from "@nestjs/common";
+import { AuthGuard } from "src/auth/auth.guard";
 
 
 @Resolver(of => Mobile)
@@ -17,6 +19,7 @@ export class MobileResolver{
 
 
     @Query(returns => Mobile, {name:'getMobileById'})
+    //@UseGuards(AuthGuard)
     getMobileById(@Args({name:'mobileId', type:()=>Int}) id: number){
         return this.mobileService.findMobileById(id);
     }

@@ -10,6 +10,7 @@ import { MobileService } from "./mobile.service";
 @Module({
     imports:[TypeOrmModule.forFeature([MobileEntity])],
     controllers:[],
-    providers:[MobileResolver, MobileService]
+    providers:[MobileResolver, MobileService],
+    exports:[MobileService]
 })
 export class MobileModule{}

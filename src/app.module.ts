@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { Mobile } from './mobile/schema/mobile.schema';
 import { MobileModule } from './mobile/mobile.module';
+import { AuthGuard } from './auth/auth.guard';
 
 @Module({
   imports: [
@@ -33,6 +34,8 @@ import { MobileModule } from './mobile/mobile.module';
     }),
     BookModule,
     MobileModule
+    //,
+    //AuthGuard
   ],
   controllers: [AppController],
   providers: [AppService],
