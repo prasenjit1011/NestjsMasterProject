@@ -186,6 +186,7 @@ EXPOSE 80/tcp
 EXPOSE 80/udp
 
 
+git push https://mytoken@github.com/prasenjit1011/NestjsMasterProject.git 
 
 
 
