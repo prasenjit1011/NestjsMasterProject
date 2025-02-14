@@ -62,6 +62,133 @@ npm i -D @types/cookie-parser
 npm install --save @nestjs/typeorm typeorm mysql2
 
 
+#   Docker 
+### Install WSL
+wsl --install
+wsl -l -v 
+
+### Start Docker Desktop as Administrator
+### CMD : Check docker status : docker --version
+### CMD : Pull docker image : docker pull nginx ( ubuntu, centos )
+### CMD : Run docker image : docker run nginx
+### CMD : Run docker image in deattached mode : docker run -d nginx
+### **  : It create docker container
+
+### CMD : Running Container List    : docker ps / docker container ls -a
+### CMD : Available Container List  : docker ps -a
+### CMD : Restart Container : docker start/stop mynginx
+### CMD : Remove Container  : docker remove mynginx
+### CMD : Docker with port binding : 
+### docker run -d --rm --name -p 8080:80  mynginx nginx
+
+### CMD : Docker Log File : docker logs -f mynginx
+### CMD : Container config check : docker inspect mynginx
+### CMD : GoTo inside of container : docker exec -it mynginx bash
+### CMD : docker run --name rpn-web-3 --cap-add=NET_ADMIN -it -net rpn-network -d httpd
+
+### CMD : Ping to container with name ( != ip ) :  nslookup jenkins
+### CMD : netstat -ntplu / -ntpl
+### CMD : iptables-save 
+### CMD : iptables-legacy-save
+### CMD : docker run --name rpn-webserver -p 80:80 --net rpn-network -d httpd 
+### CMD : docker container exec -it rpn-webserver /bin/bash
+### CMD : What port are exposed publicly : docker port rpn-webserver 
+### CMD : docker container ls | grep rpn-webserver
+### CMD : docker build -t rpn-image:v1 .
+### CMD : docker images | grep rpn-image
+
+
+### Important
+### Create container from ubuntu : docker run --name rpn-web -it ubuntu /bin/bash
+### Create image from container (rpn-web), id f25290 , we can share image with other : docker container --author "Prasenjit" -m "myimg from rpn-web" f25290 rpn-myimg
+
+### Container List : docker container ls -a
+### Image List : docker images
+
+### Create container from Global ubuntu : docker run --name rpn-web -it ubuntu /bin/bash
+### Create container from Custom/Local rpn-myimg : docker run --name rpn-newweb -it myimg /bin/bash
+### docker save -o /home/ubuntu/rpn-myimg.tar rpn-myimg
+
+### Push image to docker hub: docker image tag rpn-myimg tester/rpn-myimg:v1
+### Push image to docker hub: docker push tester/rpn-myimg:v1
+
+### Docker compose
+### Remove unused network : docker network prune
+### docker-compose -v
+### apt instal;l docker-compose
+
+
+### docker-compose.yml : Start 
+version: "v1"
+services:
+  rpn-web:
+    image: httpd
+    ports:
+      -"8000:80"
+    networks:
+      -"rpn-network"
+    volume:
+      -"rpn-volume:/data"
+  rpn-db:
+    image: redis
+    networks:
+      -"rpn-network"
+    volume:
+      -"rpn-volume:/app"
+networks:
+  rpn-network: 
+volumes:
+  rpn-volume:
+### docker-compose.yml : Completed
+### CMD : Syntax check of .yml : docker-compose config
+### CMD : Create container from multiple image(httpd, redis) of docker-compose.yml : docker-compose up -d
+### CMD : docker-compose up -d / docker-compose down
+### CMD : docker-compose up -d --scale rpn-db=5
+
+### Network
+### CMD : ifconfig / ip a s
+### docker0 : eth0 : lo ?
+### CMD : docker network inspect bridge 
+### CMD : docker run --name rpn-web -d httpd
+### CMD : docker run --name rpn-db -c MYSQL_ROOT_PASSWORD=rpnpwd -d mysql
+### CMD : docker network inspect bridge 
+### CMD : brctl show
+### IPADDRESS
+
+### CMD : docker network create rpn-bridge
+### CMD : docker network inspect rpn-bridge
+### CMD : docker network create --subnet 10.7.0.9/16 --gateway 10.7.7.7 rpn-network
+### CMD : docker run --name rpn-web-new --net=rpn-network -d httpd
+### CMD : docker run --name jenkins --net=rpn-network -d jenkins
+### CMD : docker network inspect bridge rpn-network
+### CMD : docker network connect bridge rpn-web-new
+### CMD : nslookup jenkins
+### CMD : cat /etc/resolv.conf
+### CMD : netstat ntplu
+
+
+### CMD : docker run --name rpn-web-3 --cap-add=NET_ADMIN -it --net rpn-network -d httpd
+### CMD : *** tcp, udp, DNAT, SNAT ? : iptables-legacy-save
+### CMD : Embedded DNS server
+
+
+FROM ubuntu
+MAINTAINER Prasenjit
+RUN apt-get update
+CMD ["Hello World", "CISPL"]
+ENTRYPOINT ["New World", "CISPL"]
+COPY index.html /tmp
+ADD robots.txt /tmp
+ADD http://test.com /my/path
+WORKDIR /tmp
+VOLUME /app
+EXPOSE 80/tcp
+EXPOSE 80/udp
+
+
+
+
+
 schemas
 import * as mongoose from "mongoose"
 export const CarSchema = new mongoose.Schema({
@@ -83,8 +210,17 @@ export interface ICar extends Document{
 
 
 
+Admin Section
+1. Auth Function
+2. Category CRUD
+3. Product CRUD
 
 
+Frontend Section
+1. Product Add To Cart
+2. Stripe Payment Gateway
+3. Stripe WebHook
+4. 
 
 
 
